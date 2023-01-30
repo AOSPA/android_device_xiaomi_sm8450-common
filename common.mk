@@ -171,6 +171,7 @@ PRODUCT_VENDOR_PROPERTIES += \
 
 # Fastboot
 PRODUCT_PACKAGES += \
+    android.hardware.fastboot-service.example_recovery \
     fastbootd
 
 # Fingerprint
