@@ -3,6 +3,10 @@
 # SPDX-License-Identifier: Apache-2.0
 #
 
+on property:sys.boot_completed=1
+    # Set thermal mode to mgame
+    write /sys/devices/virtual/thermal/thermal_message/sconfig 20
+
 on property:vendor.post_boot.parsed=1
     exec u:r:vendor_qti_init_shell:s0 -- /vendor/bin/init.xiaomi_taro.perf.sh
 

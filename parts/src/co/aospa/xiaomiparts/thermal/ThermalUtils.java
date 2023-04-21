@@ -79,6 +79,7 @@ public final class ThermalUtils {
     private static final String THERMAL_DEFAULT = "thermal.default=";
 
     private static final String THERMAL_SCONFIG = "/sys/class/thermal/thermal_message/sconfig";
+    private static final String THERMAL_STATE_DEFAULT = "20"; // mgame
 
     private static final String GMAPS_PACKAGE = "com.google.android.apps.maps";
     private static final String GMEET_PACKAGE = "com.google.android.apps.tachyon";
@@ -228,7 +229,7 @@ public final class ThermalUtils {
     }
 
     protected void setDefaultThermalProfile() {
-        FileUtils.writeLine(THERMAL_SCONFIG, THERMAL_STATE_MAP.get(STATE_DEFAULT));
+        FileUtils.writeLine(THERMAL_SCONFIG, THERMAL_STATE_DEFAULT);
     }
 
     protected void setThermalProfile(String packageName) {
