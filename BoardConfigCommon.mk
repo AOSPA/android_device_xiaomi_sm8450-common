@@ -90,9 +90,11 @@ BOARD_QTI_DYNAMIC_PARTITIONS_PARTITION_LIST := odm product system system_ext ven
 BOARD_QTI_DYNAMIC_PARTITIONS_SIZE ?= 9659482112 # (BOARD_SUPER_PARTITION_SIZE - 4MB overhead)
 
 $(foreach p, $(call to-upper, $(BOARD_QTI_DYNAMIC_PARTITIONS_PARTITION_LIST)), \
-    $(eval BOARD_$(p)IMAGE_FILE_SYSTEM_TYPE := ext4) \
-    $(eval BOARD_$(p)IMAGE_PARTITION_RESERVED_SIZE := 104857600) \
+    $(eval BOARD_$(p)IMAGE_FILE_SYSTEM_TYPE := erofs) \
     $(eval TARGET_COPY_OUT_$(p) := $(call to-lower, $(p))))
+
+BOARD_EROFS_COMPRESSOR := lz4
+BOARD_EROFS_PCLUSTER_SIZE := 262144
 
 # Power
 TARGET_POWER_FEATURE_EXT_LIB := //$(COMMON_PATH):libpowerfeature_ext_xiaomi
