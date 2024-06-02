@@ -392,6 +392,10 @@ PRODUCT_SHIPPING_API_LEVEL := 31
 PRODUCT_PACKAGES += \
     android.hardware.thermal@2.0-service.qti-v2
 
+# Touchscreen
+PRODUCT_PACKAGES += \
+    nonui-notifier
+
 # TrustedUI
 PRODUCT_PACKAGES += \
     android.hidl.memory.block@1.0.vendor \
