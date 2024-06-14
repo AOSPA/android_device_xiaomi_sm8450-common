@@ -140,12 +140,5 @@ ________________________________________________________________________________
                 <Prop Name="ro.vendor.qti.sys.fw.bg_apps_limit"      Value="60"         Ram="6" />
                 <Prop Name="ro.vendor.perf.enable.procomp"           Value="true"       Ram="6" />
 
-                <!-- AOSPA Edit: Enable Preferred Apps -->
-                <Prop Name="ro.vendor.perf.enable.prefapps" Value="true" />
-                <Prop Name="ro.vendor.perf.count.prefapps" Value="12" />
-                <Prop Name="ro.vendor.use_perf_hal_for_preferredapps" Value="true" />
-                <Prop Name="vendor.prefapps.pkg_retention_mins" Value="28800" />
-                <Prop Name="vendor.prefapps.last_launch_threshold" Value="21600" />
-
     </PerfConfigs>
 </PerfConfigsStore>
