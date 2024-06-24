@@ -413,15 +413,6 @@ PRODUCT_PACKAGES += \
     android.hidl.memory.block@1.0.vendor \
     vendor.qti.hardware.systemhelper@1.0.vendor
 
-# USB
-PRODUCT_ODM_PROPERTIES += \
-    vendor.usb.use_gadget_hal=0
-
-ifneq ($(TARGET_BUILD_VARIANT),user)
-PRODUCT_VENDOR_PROPERTIES += \
-    persist.vendor.usb.config=mtp,adb
-endif
-
 # VNDK
 PRODUCT_PACKAGES += \
     libutils-shim
