@@ -397,8 +397,7 @@ PRODUCT_PACKAGES += \
     vendor.qti.hardware.systemhelper@1.0.vendor
 
 # USB
-PRODUCT_ODM_PROPERTIES += \
-    vendor.usb.use_gadget_hal=0
+PRODUCT_HAS_GADGET_HAL := true
 
 ifneq ($(TARGET_BUILD_VARIANT),user)
 PRODUCT_VENDOR_PROPERTIES += \
