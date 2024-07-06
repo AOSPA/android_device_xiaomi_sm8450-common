@@ -24,6 +24,18 @@ on boot
     chown system system /sys/class/touch/touch_dev/palm_sensor
     chmod 0664 /sys/class/touch/touch_dev/palm_sensor
 
+    # Touchscreen - single_tap
+    chown system system /sys/class/touch/touch_dev/gesture_single_tap_enabled
+    chown system system /sys/class/touch/touch_dev/gesture_single_tap_state
+    chmod 0660 /sys/class/touch/touch_dev/gesture_single_tap_enabled
+    chmod 0664 /sys/class/touch/touch_dev/gesture_single_tap_state
+
+    # Touchscreen - double_tap
+    chown system system /sys/class/touch/touch_dev/gesture_double_tap_enabled
+    chown system system /sys/class/touch/touch_dev/gesture_double_tap_state
+    chmod 0660 /sys/class/touch/touch_dev/gesture_double_tap_enabled	
+    chmod 0664 /sys/class/touch/touch_dev/gesture_double_tap_state
+
     # Fingerprint
     chmod 0666 /dev/goodix_fp
     chown system system /dev/goodix_fp

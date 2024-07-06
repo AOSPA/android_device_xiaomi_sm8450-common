@@ -11,6 +11,10 @@ genfscon sysfs /devices/virtual/touch/touch_dev/palm_sensor                     
 
 # Touchscreen
 genfscon sysfs /devices/platform/goodix_ts.0                                        u:object_r:vendor_sysfs_touch:s0
+genfscon sysfs /devices/virtual/touch/touch_dev/gesture_single_tap_enabled          u:object_r:vendor_sysfs_touch:s0
+genfscon sysfs /devices/virtual/touch/touch_dev/gesture_single_tap_state            u:object_r:vendor_sysfs_touch:s0
+genfscon sysfs /devices/virtual/touch/touch_dev/gesture_double_tap_enabled          u:object_r:vendor_sysfs_touch:s0
+genfscon sysfs /devices/virtual/touch/touch_dev/gesture_double_tap_state            u:object_r:vendor_sysfs_touch:s0
 
 # Wakeup nodes
 genfscon sysfs /devices/platform/goodix_ts.0/wakeup                                 u:object_r:sysfs_wakeup:s0
