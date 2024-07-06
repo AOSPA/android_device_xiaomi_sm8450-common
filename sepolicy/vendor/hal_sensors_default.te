@@ -16,3 +16,6 @@ allow hal_sensors_default hal_audio_hwservice:hwservice_manager find;
 
 # Allow Sensors hal to read fodstatus syfs
 allow hal_sensors_default sysfs_tp_fodstatus:file r_file_perms;
+
+# Allow Sensors hal to read/write to touch sysfs
+allow hal_sensors_default vendor_sysfs_touch:file rw_file_perms;
