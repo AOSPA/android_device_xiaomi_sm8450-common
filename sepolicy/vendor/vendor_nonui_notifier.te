@@ -14,4 +14,7 @@ allow vendor_nonui_notifier fwk_sensor_hwservice:hwservice_manager find;
 allow vendor_nonui_notifier vendor_touchfeature_device:chr_file rw_file_perms;
 allow vendor_nonui_notifier vendor_sysfs_sensors:file r_file_perms;
 
+# Allow nonui_notifier to read/write to sysfs_touch
+allow vendor_nonui_notifier vendor_sysfs_touch:file rw_file_perms;
+
 get_prop(vendor_nonui_notifier, hwservicemanager_prop)
