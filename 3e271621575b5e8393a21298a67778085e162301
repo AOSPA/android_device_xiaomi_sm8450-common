@@ -16,6 +16,23 @@
       "message": "This is also happening in spes, I\u0027m carrying out some tests on this too",
       "revId": "3e271621575b5e8393a21298a67778085e162301",
       "serverId": "3162e3d8-d894-470e-abd9-724f7b0effad"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "5969e16a_b3ffca1b",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000579
+      },
+      "writtenOn": "2024-07-17T17:31:51Z",
+      "side": 1,
+      "message": "iopd still needs to be disabled",
+      "revId": "3e271621575b5e8393a21298a67778085e162301",
+      "serverId": "3162e3d8-d894-470e-abd9-724f7b0effad"
     }
   ]
 }
