@@ -34,6 +34,23 @@
       "parentUuid": "a1f49d23_ccfbd91b",
       "revId": "354911a67709429bd78975357f62c42cf54e4502",
       "serverId": "3162e3d8-d894-470e-abd9-724f7b0effad"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "5d38737e_a8bf16d6",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000143
+      },
+      "writtenOn": "2024-07-17T19:51:28Z",
+      "side": 1,
+      "message": "wouldnt it be better to properly label the needed nodes as vendor_touchfeature_device?",
+      "revId": "354911a67709429bd78975357f62c42cf54e4502",
+      "serverId": "3162e3d8-d894-470e-abd9-724f7b0effad"
     }
   ]
 }
