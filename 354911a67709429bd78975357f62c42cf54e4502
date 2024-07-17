@@ -16,6 +16,24 @@
       "message": "squash?",
       "revId": "354911a67709429bd78975357f62c42cf54e4502",
       "serverId": "3162e3d8-d894-470e-abd9-724f7b0effad"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e4395b60_b2f0b5ca",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000845
+      },
+      "writtenOn": "2024-07-17T18:07:10Z",
+      "side": 1,
+      "message": "can do",
+      "parentUuid": "a1f49d23_ccfbd91b",
+      "revId": "354911a67709429bd78975357f62c42cf54e4502",
+      "serverId": "3162e3d8-d894-470e-abd9-724f7b0effad"
     }
   ]
 }
