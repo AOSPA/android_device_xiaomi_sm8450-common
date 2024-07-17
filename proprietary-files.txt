@@ -1,4 +1,4 @@
-# Device proprietary files - from marble HyperOS V816.0.5.0.UMRMIXM package, unless pinned
+# Device proprietary files - from marble HyperOS V816.0.6.0.UMRMIXM package, unless pinned
 
 # ADSP
 vendor/bin/adsprpcd
