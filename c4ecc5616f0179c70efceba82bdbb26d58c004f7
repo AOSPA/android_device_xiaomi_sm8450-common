@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "74db33fa_8b21fb46",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000469
+      },
+      "writtenOn": "2024-07-18T01:16:13Z",
+      "side": 1,
+      "message": "DNM till marble oss kernel is ready",
+      "revId": "c4ecc5616f0179c70efceba82bdbb26d58c004f7",
+      "serverId": "3162e3d8-d894-470e-abd9-724f7b0effad"
+    }
+  ]
+}
