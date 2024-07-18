@@ -35,6 +35,24 @@
       "serverId": "3162e3d8-d894-470e-abd9-724f7b0effad"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "d972f8b0_0612985b",
+        "filename": "BoardConfigCommon.mk",
+        "patchSetId": 1
+      },
+      "lineNbr": 116,
+      "author": {
+        "id": 1000845
+      },
+      "writtenOn": "2024-07-18T13:36:39Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7fee4af9_571a923c",
+      "revId": "c4ecc5616f0179c70efceba82bdbb26d58c004f7",
+      "serverId": "3162e3d8-d894-470e-abd9-724f7b0effad"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "b5f94377_5f87e0bb",
@@ -48,6 +66,24 @@
       "writtenOn": "2024-07-18T13:31:45Z",
       "side": 1,
       "message": "extra line",
+      "revId": "c4ecc5616f0179c70efceba82bdbb26d58c004f7",
+      "serverId": "3162e3d8-d894-470e-abd9-724f7b0effad"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "df2aa5cd_94013e48",
+        "filename": "sepolicy/vendor/genfs_contexts",
+        "patchSetId": 1
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 1000845
+      },
+      "writtenOn": "2024-07-18T13:36:39Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "b5f94377_5f87e0bb",
       "revId": "c4ecc5616f0179c70efceba82bdbb26d58c004f7",
       "serverId": "3162e3d8-d894-470e-abd9-724f7b0effad"
     }

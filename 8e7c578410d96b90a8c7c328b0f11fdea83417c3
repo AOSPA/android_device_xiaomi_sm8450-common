@@ -22,6 +22,30 @@
       },
       "revId": "8e7c578410d96b90a8c7c328b0f11fdea83417c3",
       "serverId": "3162e3d8-d894-470e-abd9-724f7b0effad"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "67a58c80_399b5f9e",
+        "filename": "overlay/AOSPAXiaomiTaroFrameworksOverlay/res/values/config.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 1000845
+      },
+      "writtenOn": "2024-07-18T13:36:39Z",
+      "side": 0,
+      "message": "Done",
+      "parentUuid": "99aa7f83_01dc63b0",
+      "range": {
+        "startLine": 45,
+        "startChar": 4,
+        "endLine": 54,
+        "endChar": 0
+      },
+      "revId": "8e7c578410d96b90a8c7c328b0f11fdea83417c3",
+      "serverId": "3162e3d8-d894-470e-abd9-724f7b0effad"
     }
   ]
 }
