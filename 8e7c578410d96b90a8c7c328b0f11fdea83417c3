@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "99aa7f83_01dc63b0",
+        "filename": "overlay/AOSPAXiaomiTaroFrameworksOverlay/res/values/config.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 1000469
+      },
+      "writtenOn": "2024-07-18T01:17:57Z",
+      "side": 0,
+      "message": "don\u0027t remove keyhandler, that\u0027s only for side fps devices: https://github.com/AOSPA/android_device_xiaomi_sm8450-common/commit/2b7abaf68e65950429889ed9f4f0164b8b886893",
+      "range": {
+        "startLine": 45,
+        "startChar": 4,
+        "endLine": 54,
+        "endChar": 0
+      },
+      "revId": "8e7c578410d96b90a8c7c328b0f11fdea83417c3",
+      "serverId": "3162e3d8-d894-470e-abd9-724f7b0effad"
+    }
+  ]
+}
