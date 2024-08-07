@@ -19,6 +19,8 @@
     <!-- Pocket Lock -->
     <bool name="config_pocketModeSupported">true</bool>
     <bool name="config_pocketModeLightSensorSupported">false</bool>
+    <string name="config_pocketJudgeVendorSensorName">xiaomi.sensor.nonui</string>
+    <item name="config_pocketJudgeVendorSensorValue" format="float" type="dimen">2.0</item>
 
     <!-- Path to fast charging status file to detect whether an oem fast charger is active -->
     <string name="config_oemFastChargerStatusPath" translatable="false">/sys/class/qcom-battery/fastchg_mode</string>
