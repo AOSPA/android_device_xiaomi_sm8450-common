@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "578c5492_a96f0a57",
+        "filename": "power/power-mode.cpp",
+        "patchSetId": 1
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 1000737
+      },
+      "writtenOn": "2024-08-08T19:15:43Z",
+      "side": 1,
+      "message": "https://github.com/AOSPA/android_device_xiaomi_sm8450-common/blob/uvite/parts/src/co/aospa/xiaomiparts/thermal/ThermalUtils.java#L53 \n\nwhich of the values ​​is correct?",
+      "revId": "e920312fe57be5b66cf3e5a8ab7993e2ad3f9fbf",
+      "serverId": "3162e3d8-d894-470e-abd9-724f7b0effad"
+    }
+  ]
+}
