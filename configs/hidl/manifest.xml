@@ -683,15 +683,6 @@ SPDX-License-Identifier: BSD-3-Clause-Clear
         <fqname>@1.0::IComponentStore/default1</fqname>
     </hal>
     <hal format="hidl">
-        <name>android.hardware.ir</name>
-        <transport>hwbinder</transport>
-        <version>1.0</version>
-        <interface>
-            <name>IConsumerIr</name>
-            <instance>default</instance>
-        </interface>
-    </hal>
-    <hal format="hidl">
         <name>vendor.xiaomi.hardware.bgservice</name>
         <transport>hwbinder</transport>
         <version>1.0</version>

@@ -11,7 +11,7 @@ type vendor_fingerprint_data_file, data_file_type, file_type, vendor_persist_typ
 type vendor_fingerprint_device, dev_type;
 
 # IR
-type ir_spi_device, dev_type;
+type lirc_device, dev_type;
 
 # Sensors
 type vendor_sysfs_iio, fs_type, sysfs_type;
