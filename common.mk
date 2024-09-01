@@ -250,8 +250,8 @@ PRODUCT_PACKAGES += \
     android.hardware.security.rkp-V1-ndk_platform.vendor \
     libkeymaster_messages.vendor
 
-PRODUCT_COPY_FILES += \
-    frameworks/native/data/etc/android.hardware.keystore.app_attest_key.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.keystore.app_attest_key.xml
+#PRODUCT_COPY_FILES += \
+#    frameworks/native/data/etc/android.hardware.keystore.app_attest_key.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.keystore.app_attest_key.xml
 
 PRODUCT_VENDOR_PROPERTIES += \
     ro.hardware.keystore_desede=true \
