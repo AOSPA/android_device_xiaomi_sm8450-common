@@ -91,6 +91,9 @@ function blob_fixup() {
         vendor/lib64/libwvhidl.so)
             grep -q "libcrypto_shim.so" "${2}" || "${PATCHELF}" --add-needed "libcrypto_shim.so" "${2}"
             ;;
+        vendor/lib64/vendor.libdpmframework.so)
+            "${PATCHELF}" --add-needed "libhidlbase_shim.so" "${2}"
+            ;;
     esac
 }
 

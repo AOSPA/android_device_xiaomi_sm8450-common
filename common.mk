@@ -163,6 +163,9 @@ PRODUCT_SYSTEM_EXT_PROPERTIES += \
     ro.sensor.proximity?=true
 
 # DPM
+PRODUCT_PACKAGES += \
+    libhidlbase_shim
+
 PRODUCT_VENDOR_PROPERTIES += \
     persist.vendor.dpm.vndr.feature=1 \
     persist.vendor.dpm.vndr.halservice.enable=1 \
