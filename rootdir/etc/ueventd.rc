@@ -43,9 +43,12 @@
 /sys/bus/platform/devices/soc:fingerprint_fpc* power_ctrl       0700  system system
 /sys/bus/platform/devices/soc:fingerprint_fpc* screen           0700  system system
 
-# xiaomi display feature
+# Xiaomi display feature
 subsystem mi_display
     devname uevent_devpath
     dirname /dev/mi_display
 
-/dev/mi_display/*         0666   root       graphics
+/dev/mi_display/*                                               0666  root graphics
+
+# Battery
+/sys/class/qcom-battery                        input_suspend    0660  system system
