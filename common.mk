@@ -153,7 +153,6 @@ PRODUCT_VENDOR_PROPERTIES += \
     debug.sf.region_sampling_period_ns=200000000 \
     debug.sf.region_sampling_timer_timeout_ns=200000000 \
     persist.sys.sf.native_mode=258 \
-    ro.gfx.driver.1=com.qualcomm.qti.gpudrivers.taro.api32 \
     ro.vendor.display.ai_disp.enable=true \
     ro.vendor.display.hwc_thermal_dimming=true \
     ro.vendor.display.mi_calib.enable=true \
