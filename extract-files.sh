@@ -86,7 +86,7 @@ function blob_fixup() {
             sed -i "s/=\([0-9]\+\)>/=\"\1\">/g" "${2}"
             ;;
         vendor/etc/media_codecs*.xml)
-            sed -Ei "/media_codecs_(google_audio|google_telephony|vendor_audio)/d" "${2}"
+            sed -Ei "/media_codecs_(google_audio|google_c2|google_telephony|vendor_audio)/d" "${2}"
             ;;
         vendor/etc/seccomp_policy/atfwd@2.0.policy | vendor/etc/seccomp_policy/modemManager.policy | vendor/etc/seccomp_policy/wfdhdcphalservice.policy)
             [ -n "$(tail -c 1 "${2}")" ] && echo >> "${2}"
