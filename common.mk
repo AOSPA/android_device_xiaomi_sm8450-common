@@ -191,7 +191,7 @@ PRODUCT_PACKAGES += \
 # Fingerprint
 ifneq ($(TARGET_USES_MFP_DAEMON),true)
 PRODUCT_PACKAGES += \
-    android.hardware.biometrics.fingerprint@2.3-service.xiaomi \
+    android.hardware.biometrics.fingerprint-service.xiaomi \
     libudfpshandler
 endif
 

@@ -14,6 +14,7 @@ ro.vendor.xiaomi.bl.poll                              u:object_r:vendor_displayf
 init.svc.vendor.displayfeature-hal-1-0                u:object_r:vendor_displayfeature_prop:s0
 
 # Fingerprint
+persist.vendor.fingerprint.                           u:object_r:vendor_fp_prop:s0
 persist.vendor.sys.fp.                                u:object_r:vendor_fp_prop:s0
 ro.hardware.fp.                                       u:object_r:vendor_fp_prop:s0
 vendor.fps_hal.                                       u:object_r:vendor_fp_prop:s0
