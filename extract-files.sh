@@ -85,9 +85,6 @@ function blob_fixup() {
         vendor/etc/camera/pureView_parameter.xml)
             sed -i "s/=\([0-9]\+\)>/=\"\1\">/g" "${2}"
             ;;
-        vendor/etc/qcril_database/upgrade/config/6.0_config.sql)
-            sed -i '/persist.vendor.radio.redir_party_num/ s/true/false/g' "${2}"
-            ;;
     esac
 }
 

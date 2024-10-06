@@ -367,6 +367,9 @@ PRODUCT_VENDOR_PROPERTIES += \
     persist.vendor.radio.redir_party_num=0 \
     ro.vendor.radio.build_profile=u-stable
 
+PRODUCT_PACKAGES += \
+    qcrilNrDb_vendor
+
 # Sensors
 PRODUCT_PACKAGES += \
     android.hardware.sensors-service.multihal \
