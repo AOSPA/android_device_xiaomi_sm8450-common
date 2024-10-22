@@ -370,9 +370,6 @@ vendor/etc/media_profiles_taro.xml
 vendor/etc/media_profiles_ukee.xml
 vendor/etc/media_taro/video_system_specs.json
 vendor/etc/media_ukee/video_system_specs.json
-vendor/lib64/libAlacSwDec.so
-vendor/lib64/libApeSwDec.so
-vendor/lib64/libFlacSwDec.so
 vendor/lib64/libdsd2pcm.so
 vendor/lib64/libvppclient.so
 vendor/lib64/libvppcommon.so
