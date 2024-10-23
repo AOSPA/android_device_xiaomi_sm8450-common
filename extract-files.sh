@@ -85,7 +85,7 @@ function blob_fixup() {
         vendor/etc/camera/pureView_parameter.xml)
             sed -i "s/=\([0-9]\+\)>/=\"\1\">/g" "${2}"
             ;;
-        vendor/etc/seccomp_policy/atfwd@2.0.policy | vendor/etc/seccomp_policy/wfdhdcphalservice.policy)
+        vendor/etc/seccomp_policy/atfwd@2.0.policy | vendor/etc/seccomp_policy/modemManager.policy | vendor/etc/seccomp_policy/wfdhdcphalservice.policy)
             [ -n "$(tail -c 1 "${2}")" ] && echo >> "${2}"
             grep -q "gettid: 1" "${2}" || echo "gettid: 1" >> "${2}"
             ;;
