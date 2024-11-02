@@ -566,6 +566,8 @@ vendor/etc/seccomp_policy/qcrilnr@2.0.policy
 vendor/etc/vintf/manifest/dataconnection-saidl.xml
 vendor/etc/vintf/manifest/qtiradio-saidl.xml
 vendor/etc/vintf/manifest/vendor.qti.hardware.radio.ims.xml
+vendor/etc/xiaomi_ecc_list.xml
+vendor/etc/xiaomi_ecc_list_preference.xml
 vendor/lib64/deviceInfoServiceModuleNr.so
 vendor/lib64/libQtiRilLoadable.so
 vendor/lib64/libconfigdb.so
