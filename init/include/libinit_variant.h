@@ -19,6 +19,7 @@ typedef struct variant_info {
     string device;
     string model;
     string name;
+    string mod_device;
     string marketname;
 } variant_info_t;
 

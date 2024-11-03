@@ -77,6 +77,7 @@ void set_variant_props(const variant_info_t variant) {
     set_ro_build_prop("name", variant.name);
     set_ro_build_prop("marketname", variant.marketname);
     property_override("ro.product.board", variant.device.c_str());
+    property_override("ro.product.mod_device", variant.mod_device.c_str());
     property_override("bluetooth.device.default_name", variant.marketname.c_str());
 }
 
