@@ -78,12 +78,6 @@ function blob_fixup() {
             "${PATCHELF}" --add-needed "libutils-v32.so" "${2}"
             "${PATCHELF}" --add-needed "libutils-shim.so" "${2}"
             ;;
-        vendor/bin/hw/vendor.qti.secure_element@1.2-service)
-            [ "$2" = "" ] && return 0
-            "${PATCHELF}" --replace-needed "jcos_nq_client-v1.so" "jcos_nq_client.so" "${2}"
-            "${PATCHELF}" --replace-needed "ls_nq_client-v1.so" "ls_nq_client.so" "${2}"
-            "${PATCHELF}" --replace-needed "se_nq_extn_client-v1.so" "se_nq_extn_client.so" "${2}"
-            ;;
         vendor/etc/camera/*_motiontuning.xml)
             [ "$2" = "" ] && return 0
             sed -i 's/xml=version/xml\ version/g' "${2}"

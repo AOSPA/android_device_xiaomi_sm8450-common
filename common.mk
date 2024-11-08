@@ -324,6 +324,31 @@ PRODUCT_PACKAGES += \
 # NDK
 NEED_AIDL_NDK_PLATFORM_BACKEND := true
 
+# NFC
+PRODUCT_PACKAGES += \
+    NfcNci \
+    Tag \
+    android.hardware.nfc-service.nxp \
+    android.hardware.nfc@1.2.vendor \
+    com.android.nfc_extras \
+    libchrome.vendor
+
+ifneq ($(TARGET_NFC_SKU),)
+NFC_PERMISSIONS_DIR := $(TARGET_COPY_OUT_ODM)/etc/permissions/sku_$(TARGET_NFC_SKU)
+else
+NFC_PERMISSIONS_DIR := $(TARGET_COPY_OUT_VENDOR)/etc/permissions
+endif
+
+PRODUCT_COPY_FILES += \
+    frameworks/native/data/etc/android.hardware.nfc.xml:$(NFC_PERMISSIONS_DIR)/android.hardware.nfc.xml \
+    frameworks/native/data/etc/android.hardware.nfc.ese.xml:$(NFC_PERMISSIONS_DIR)/android.hardware.nfc.ese.xml \
+    frameworks/native/data/etc/android.hardware.nfc.hce.xml:$(NFC_PERMISSIONS_DIR)/android.hardware.nfc.hce.xml \
+    frameworks/native/data/etc/android.hardware.nfc.hcef.xml:$(NFC_PERMISSIONS_DIR)/android.hardware.nfc.hcef.xml \
+    frameworks/native/data/etc/android.hardware.nfc.uicc.xml:$(NFC_PERMISSIONS_DIR)/android.hardware.nfc.uicc.xml \
+    frameworks/native/data/etc/android.hardware.se.omapi.ese.xml:$(NFC_PERMISSIONS_DIR)/android.hardware.se.omapi.ese.xml \
+    frameworks/native/data/etc/com.android.nfc_extras.xml:$(NFC_PERMISSIONS_DIR)/com.android.nfc_extras.xml \
+    frameworks/native/data/etc/com.nxp.mifare.xml:$(NFC_PERMISSIONS_DIR)/com.nxp.mifare.xml
+
 # Namespaces
 PRODUCT_SOONG_NAMESPACES += \
     $(LOCAL_PATH) \
@@ -369,7 +394,6 @@ TARGET_COMMON_QTI_COMPONENTS := \
     gps \
     init \
     media \
-    nfc \
     overlay \
     perf \
     telephony \
@@ -387,6 +411,10 @@ PRODUCT_VENDOR_PROPERTIES += \
 
 PRODUCT_PACKAGES += \
     qcrilNrDb_vendor
+
+# Secure element
+PRODUCT_COPY_FILES += \
+    frameworks/native/data/etc/android.hardware.se.omapi.uicc.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.se.omapi.uicc.xml
 
 # Sensors
 PRODUCT_PACKAGES += \
