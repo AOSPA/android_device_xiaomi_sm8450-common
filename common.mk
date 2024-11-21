@@ -276,6 +276,8 @@ SPAMMY_LOG_TAGS := \
     libsensor-parseRGB \
     libsensor-ssccalapi \
     sensors \
+    vendor.qti.bluetooth@1.0-ibs_handler \
+    vendor.qti.bluetooth@1.0-wake_lock \
     vendor.qti.hardware.display.composer-service \
     vendor.xiaomi.sensor.citsensorservice@2.0-service
 
