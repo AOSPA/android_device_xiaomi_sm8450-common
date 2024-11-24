@@ -122,7 +122,7 @@ public final class ThermalUtils {
     }
 
     protected Boolean isEnabled() {
-        return mSharedPrefs.getBoolean(THERMAL_ENABLED, true);
+        return mSharedPrefs.getBoolean(THERMAL_ENABLED, false);
     }
 
     protected void setEnabled(boolean enabled) {
