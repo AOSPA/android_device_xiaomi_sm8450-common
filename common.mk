@@ -146,6 +146,8 @@ PRODUCT_ODM_PROPERTIES += \
 
 PRODUCT_VENDOR_PROPERTIES += \
     debug.sf.frame_rate_multiple_threshold=120 \
+    debug.sf.region_sampling_period_ns=200000000 \
+    debug.sf.region_sampling_timer_timeout_ns=200000000 \
     persist.sys.sf.native_mode=258 \
     ro.gfx.driver.1=com.qualcomm.qti.gpudrivers.taro.api32 \
     ro.vendor.display.ai_disp.enable=true \
