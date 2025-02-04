@@ -11,9 +11,12 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.hardware.camera2.CameraManager;
+import android.nfc.INfcAdapter;
 import android.nfc.NfcAdapter;
 import android.os.Handler;
 import android.os.IBinder;
+import android.os.RemoteException;
+import android.os.ServiceManager;
 import android.os.SystemProperties;
 import android.os.UserHandle;
 import android.util.Log;
@@ -33,7 +36,7 @@ public class NfcCameraService extends Service {
         "com.google.android.as" // auto rotate, screen attention etc
     );
 
-    private NfcAdapter mNfcAdapter;
+    private INfcAdapter mNfcAdapter;
     private CameraManager mCameraManager;
     private boolean mIsFrontCamInUse = false;
 
@@ -92,15 +95,17 @@ public class NfcCameraService extends Service {
         } else if (SystemProperties.getBoolean(SYSPROP, false)) {
             Log.i(TAG, "Disabled via system prop");
         } else {
-            context.startServiceAsUser(new Intent(context, NfcCameraService.class), UserHandle.CURRENT);
+            context.startServiceAsUser(
+                    new Intent(context, NfcCameraService.class), UserHandle.CURRENT);
         }
     }
 
-    private NfcAdapter getNfcAdapter() {
+    private INfcAdapter getNfcAdapter() {
         if (mNfcAdapter == null) {
             dlog("getNfcAdapter: mNfcAdapter=null");
             try {
-                mNfcAdapter = NfcAdapter.getDefaultAdapter(this);
+                mNfcAdapter = INfcAdapter.Stub.asInterface(
+                        ServiceManager.getService(Context.NFC_SERVICE));
             } catch (Exception e) {
                 Log.e(TAG, "getNfcAdapter failed!", e);
             }
@@ -109,12 +114,12 @@ public class NfcCameraService extends Service {
     }
 
     private void updateNfcPollingState() {
-        final NfcAdapter adapter = getNfcAdapter();
+        final INfcAdapter adapter = getNfcAdapter();
         if (adapter == null) {
             Log.e(TAG, "updateNfcPollingState: NfcAdapter is null!");
             return;
         }
-        if (!adapter.isEnabled()) {
+        if (!isNfcEnabled(adapter)) {
             dlog("updateNfcPollingState: nfc is disabled");
             return;
         }
@@ -123,21 +128,38 @@ public class NfcCameraService extends Service {
             pausePolling(adapter);
         } else {
             Log.i(TAG, "Front cam not in use, resume polling");
-            mHandler.removeCallbacksAndMessages(null);           
-            adapter.resumePolling();
+            mHandler.removeCallbacksAndMessages(null);   
+            try {        
+                adapter.resumePolling();
+            } catch (RemoteException e) {
+                Log.e(TAG, "Failed to resume polling!", e);
+            }
         }
     }
 
-    private void pausePolling(NfcAdapter adapter) {
-        adapter.pausePolling(MAX_POLLING_PAUSE_TIMEOUT);
+    private void pausePolling(INfcAdapter adapter) {
+        try {
+            adapter.pausePolling(MAX_POLLING_PAUSE_TIMEOUT);
+        } catch (RemoteException e) {
+            Log.e(TAG, "Failed to pause polling!", e);
+        }
         mHandler.postDelayed(() -> {
-            if (adapter.isEnabled()) {
+            if (isNfcEnabled(adapter)) {
                 Log.i(TAG, "Front cam still in use, polling pause timed out, pausing again");
                 pausePolling(adapter);
             } else {
                 dlog("pausePolling: nfc is disabled");
             }
         }, MAX_POLLING_PAUSE_TIMEOUT + 100);
+    }
+
+    private static boolean isNfcEnabled(INfcAdapter adapter) {
+        try {
+            return adapter.getState() == NfcAdapter.STATE_ON;
+        } catch (RemoteException e) {
+            Log.e(TAG, "Failed to get nfc state!", e);
+            return false;
+        }
     }
 
     private static void dlog(String msg) {
