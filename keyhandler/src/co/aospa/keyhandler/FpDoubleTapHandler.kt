@@ -45,11 +45,11 @@ import com.android.internal.util.ScreenshotHelper
 class FpDoubleTapHandler(
     private val context: Context
 ) {
-    private val audioManager = context.getSystemService(AudioManager::class.java)
-    private val cameraManager = context.getSystemService(CameraManager::class.java)
-    private val powerManager = context.getSystemService(PowerManager::class.java)
-    private val statusBarManager = context.getSystemService(StatusBarManager::class.java)
-    private val vibrator = context.getSystemService(Vibrator::class.java)
+    private val audioManager = context.getSystemService(AudioManager::class.java)!!
+    private val cameraManager = context.getSystemService(CameraManager::class.java)!!
+    private val powerManager = context.getSystemService(PowerManager::class.java)!!
+    private val statusBarManager = context.getSystemService(StatusBarManager::class.java)!!
+    private val vibrator = context.getSystemService(Vibrator::class.java)!!
 
     private val handler = Handler(Looper.getMainLooper())
     private val screenshotHelper = ScreenshotHelper(context)
