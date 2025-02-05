@@ -133,6 +133,7 @@ PRODUCT_PACKAGES += \
 
 # Display / Graphics
 PRODUCT_PACKAGES += \
+    libgui_vendor \
     vendor.qti.hardware.display.config-V2-ndk_platform.vendor \
     vendor.qti.hardware.display.config-V5-ndk_platform.vendor \
     vendor.qti.hardware.memtrack-service
