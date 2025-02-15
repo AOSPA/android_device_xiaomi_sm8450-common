@@ -157,6 +157,24 @@ on property:vendor.audio.cit.spkcal.copy=true
     chmod 666 /mnt/vendor/persist/audio/aw_calr.bin
     chmod 666 /mnt/vendor/persist/audio/aw_calr.txt
 
+    # foursemi
+    # 2.backup
+    chmod 600 /mnt/vendor/persist/audio/fsalgo_rdc.bin
+    chmod 600 /mnt/vendor/persist/audio/fsalgo_rdc.txt
+    copy /mnt/vendor/persist/audio/fsalgo_rdc.bin /mnt/vendor/persist/audio/fsalgo_rdc.bin.bak
+    copy /mnt/vendor/persist/audio/fsalgo_rdc.txt /mnt/vendor/persist/audio/fsalgo_rdc.txt.bak
+
+    # 3.newCreate
+    write /mnt/vendor/persist/audio/fsalgo_rdc.bin ""
+    write /mnt/vendor/persist/audio/fsalgo_rdc.txt ""
+
+    # 4.recovery
+    copy /mnt/vendor/persist/audio/fsalgo_rdc.bin.bak /mnt/vendor/persist/audio/fsalgo_rdc.bin
+    copy /mnt/vendor/persist/audio/fsalgo_rdc.txt.bak /mnt/vendor/persist/audio/fsalgo_rdc.txt
+
+    chmod 666 /mnt/vendor/persist/audio/fsalgo_rdc.bin
+    chmod 666 /mnt/vendor/persist/audio/fsalgo_rdc.txt
+
 service init-xiaomi-taro-sh /vendor/bin/init.xiaomi_taro.sh
     class main
     user system

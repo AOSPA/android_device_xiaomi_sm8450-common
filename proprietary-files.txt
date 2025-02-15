@@ -1,4 +1,4 @@
-# Device proprietary files - from marble OS1.0.14.0.UMRCNXM package, unless pinned
+# Device proprietary files - from cupid OS2.0.2.0.VLCCNXM package, unless pinned
 
 # ADSP
 vendor/bin/adsprpcd
@@ -317,7 +317,7 @@ vendor/lib64/libspcom.so
 # Keymint
 vendor/bin/hw/android.hardware.security.keymint-service-qti
 vendor/etc/init/android.hardware.security.keymint-service-qti.rc
-vendor/etc/vintf/manifest/android.hardware.security.keymint-service-qti-rkp.xml
+vendor/etc/vintf/manifest/android.hardware.security.keymint-service-qti.xml
 vendor/lib64/libqtikeymint.so
 
 # Limits
@@ -368,6 +368,7 @@ vendor/etc/media_profiles_ukee.xml
 vendor/etc/media_taro/video_system_specs.json
 vendor/etc/media_ukee/video_system_specs.json
 vendor/lib64/libdsd2pcm.so
+vendor/lib64/libmisight.so
 vendor/lib64/libvppclient.so
 vendor/lib64/libvppcommon.so
 vendor/lib64/libvpphcp.so
@@ -444,7 +445,7 @@ vendor/lib64/libperipheral_client.so
 vendor/etc/public.libraries.txt
 
 # QCC
-vendor/bin/qcc-trd|100959b1896e51be25ca3191743a2ec89baed193
+vendor/bin/qcc-trd
 vendor/etc/init/init.qdmastats.rc
 vendor/lib64/hw/vendor.qti.hardware.qccvndhal@1.0-impl.so
 vendor/lib64/libgrpc++_unsecure.so
