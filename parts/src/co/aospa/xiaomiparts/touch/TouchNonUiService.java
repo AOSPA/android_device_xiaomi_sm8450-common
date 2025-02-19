@@ -65,8 +65,6 @@ public class TouchNonUiService extends Service {
                     break;
                 case Intent.ACTION_SCREEN_OFF:
                     if (!mListening) {
-                        final boolean pocketJudgeEnabled = Settings.System.getInt(
-                                getContentResolver(), Settings.System.POCKET_JUDGE, 0) == 1;
                         final boolean doubleTapEnabled = Settings.System.getInt(
                                 getContentResolver(), Settings.System.GESTURE_DOUBLE_TAP,
                                 getResources().getInteger(
@@ -77,12 +75,10 @@ public class TouchNonUiService extends Service {
                                     com.android.internal.R.integer.config_singleTapDefault)) > 0;
                         final boolean udfpsEnabled =
                                 mAmbientConfig.screenOffUdfpsEnabled(UserHandle.myUserId());
-                        dlog("pocketJudgeEnabled=" + pocketJudgeEnabled + " doubleTapEnabled="
-                                + doubleTapEnabled + " singleTapEnabled=" + singleTapEnabled
-                                + " udfpsEnabled=" + udfpsEnabled);
+                        dlog("doubleTapEnabled=" + doubleTapEnabled + " singleTapEnabled="
+                                + singleTapEnabled + " udfpsEnabled=" + udfpsEnabled);
 
-                        if (pocketJudgeEnabled &&
-                                (doubleTapEnabled || singleTapEnabled || udfpsEnabled)) {
+                        if (doubleTapEnabled || singleTapEnabled || udfpsEnabled) {
                             mSensorManager.registerListener(mSensorListener,
                                     mNonUiSensor, SensorManager.SENSOR_DELAY_NORMAL);
                             mListening = true;
