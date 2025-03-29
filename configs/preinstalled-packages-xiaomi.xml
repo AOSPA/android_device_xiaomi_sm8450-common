@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- System packages to preinstall on AOSPA, per user type.
+     Documentation at frameworks/base/data/etc/preinstalled-packages-platform.xml
+-->
+<config>
+    <!--  Xiaomi Dolby  -->
+    <install-in-user-type package="co.aospa.dolby.xiaomi">
+        <install-in user-type="SYSTEM" />
+    </install-in-user-type>
+
+    <!--  Xiaomi Parts  -->
+    <install-in-user-type package="co.aospa.xiaomiparts">
+        <install-in user-type="SYSTEM" />
+    </install-in-user-type>
+</config>

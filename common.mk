@@ -351,6 +351,10 @@ PRODUCT_COPY_FILES += \
 # Platform
 TARGET_BOARD_PLATFORM := taro
 
+# Preinstalled packages
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/preinstalled-packages-xiaomi.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/sysconfig/preinstalled-packages-xiaomi.xml
+
 # Project ID Quota
 $(call inherit-product, $(SRC_TARGET_DIR)/product/emulated_storage.mk)
 
