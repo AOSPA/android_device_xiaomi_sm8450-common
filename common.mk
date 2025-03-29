@@ -379,7 +379,7 @@ PRODUCT_VENDOR_PROPERTIES += \
     persist.vendor.radio.add_power_save=1 \
     persist.vendor.radio.dynamic_sar=1 \
     persist.vendor.radio.redir_party_num=0 \
-    ro.vendor.radio.build_profile=u-stable
+    ro.vendor.radio.build_profile=v-stable
 
 PRODUCT_PACKAGES += \
     qcrilNrDb_vendor
