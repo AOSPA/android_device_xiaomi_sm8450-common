@@ -76,7 +76,8 @@ PRODUCT_VENDOR_PROPERTIES += \
     ro.vendor.audio.support.sound.id=true
 
 PRODUCT_PACKAGES += \
-    libaudioroute.vendor
+    libaudioroute.vendor \
+    libtinycompress
 
 # Bluetooth
 PRODUCT_VENDOR_PROPERTIES += \
@@ -91,6 +92,13 @@ PRODUCT_VENDOR_PROPERTIES += \
     persist.vendor.service.bdroid.soc.alwayson=true \
     ro.vendor.bluetooth.csip_qti=true
 
+PRODUCT_PACKAGES += \
+    android.hardware.bluetooth@1.0.vendor \
+    com.dsi.ant@1.0.vendor \
+    vendor.qti.hardware.bluetooth_audio@2.1.vendor \
+    vendor.qti.hardware.btconfigstore@1.0.vendor \
+    vendor.qti.hardware.btconfigstore@2.0.vendor
+
 # Camera
 $(call inherit-product-if-exists, vendor/xiaomi/camera/miuicamera.mk)
 
@@ -99,7 +107,7 @@ PRODUCT_PACKAGES += \
     libcamera_metadata.vendor \
     libexif.vendor \
     libjpeg.vendor \
-    liblz4.vendor \
+    libyuv.vendor \
     vendor.qti.hardware.camera.aon@1.0.vendor \
     vendor.qti.hardware.camera.postproc@1.0.vendor
 
@@ -410,6 +418,14 @@ PRODUCT_VENDOR_PROPERTIES += \
     ro.vendor.radio.build_profile=v-stable
 
 PRODUCT_PACKAGES += \
+    android.hardware.radio@1.6.vendor \
+    android.hardware.radio.config@1.3.vendor \
+    android.hardware.radio.deprecated@1.0.vendor \
+    android.hardware.secure_element@1.2.vendor \
+    android.system.net.netd@1.1.vendor \
+    android.hardware.wifi.hostapd@1.0.vendor \
+    android.hardware.wifi.supplicant@1.0.vendor \
+    libjson \
     qcrilNrDb_vendor
 
 # Secure element
