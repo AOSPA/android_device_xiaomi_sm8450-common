@@ -281,6 +281,7 @@ vendor/lib64/liblocdiagiface.so
 vendor/lib64/liblowi_client.so
 vendor/lib64/liblowi_common.so
 vendor/lib64/liblowi_wifihal.so
+vendor/lib64/libpal_net_if.so
 vendor/lib64/libqppe.so
 vendor/lib64/libslimclient.so
 vendor/lib64/libsynergy_loc_api.so
