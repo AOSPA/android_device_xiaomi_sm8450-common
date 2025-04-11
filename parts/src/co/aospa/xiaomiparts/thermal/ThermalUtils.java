@@ -57,15 +57,15 @@ public final class ThermalUtils {
     protected static final int STATE_VIDEO = 8;
 
     private static final Map<Integer, String> THERMAL_STATE_MAP = Map.of(
-        STATE_DEFAULT, "0",
-        STATE_BENCHMARK, "10",
-        STATE_BROWSER, "11",
-        STATE_CAMERA, "12",
-        STATE_DIALER, "8",
-        STATE_GAMING, "13",
-        STATE_NAVIGATION, "19",
-        STATE_STREAMING, "4",
-        STATE_VIDEO, "21"
+        STATE_DEFAULT, "0", // thermal-normal.conf
+        STATE_BENCHMARK, "10", // thermal-nolimits.conf
+        STATE_BROWSER, "11", // thermal-class0.conf
+        STATE_CAMERA, "12", // thermal-camera.conf
+        STATE_DIALER, "8", // thermal-phone.conf
+        STATE_GAMING, "13", // thermal-tgame.conf
+        STATE_NAVIGATION, "19", // thermal-navigation.conf
+        STATE_STREAMING, "4", // thermal-videochat.conf
+        STATE_VIDEO, "21" // thermal-video.conf
     );
 
     private static final String THERMAL_BENCHMARK = "thermal.benchmark=";
@@ -79,7 +79,7 @@ public final class ThermalUtils {
     private static final String THERMAL_DEFAULT = "thermal.default=";
 
     private static final String THERMAL_SCONFIG = "/sys/class/thermal/thermal_message/sconfig";
-    private static final String THERMAL_STATE_DEFAULT = "20"; // mgame
+    private static final String THERMAL_STATE_DEFAULT = "20"; // thermal-mgame.conf
 
     private static final String GMAPS_PACKAGE = "com.google.android.apps.maps";
     private static final String GMEET_PACKAGE = "com.google.android.apps.tachyon";
