@@ -5,7 +5,7 @@
 //
 
 cc_library_headers {
-    name: "xiaomi_sm8450_sensor_notifier_headers",
+    name: "xiaomi_taro_sensor_notifier_headers",
     export_include_dirs: ["include"],
     vendor: true,
 }
@@ -31,7 +31,7 @@ cc_binary {
     ],
 
     header_libs: [
-        "xiaomi_sm8450_sensor_notifier_headers",
+        "xiaomi_taro_sensor_notifier_headers",
         "qti_kernel_headers",
     ],
 }
