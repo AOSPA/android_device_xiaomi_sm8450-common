@@ -292,11 +292,11 @@ vendor/lib64/libxtwifi_server_protocol_uri_v3.so
 vendor/lib64/vendor.qti.gnss-V3-ndk_platform.so
 vendor/lib64/vendor.qti.gnss-service.so
 
-# Hotword enrollment - from marble OS1.0.8.0.UMRMIXM
-product/priv-app/HotwordEnrollmentOKGoogleHEXAGON_WIDEBAND/HotwordEnrollmentOKGoogleHEXAGON_WIDEBAND.apk|1f9eb653ab838483ca643976bd9d7aca02755bf5
-product/priv-app/HotwordEnrollmentXGoogleHEXAGON_WIDEBAND/HotwordEnrollmentXGoogleHEXAGON_WIDEBAND.apk|5c08b6e509409c149557c1e9895af9304df87fc5
-system_ext/etc/permissions/com.android.hotwordenrollment.common.util.xml|99cfd80965c170f4885a7dd62c0eaad1a0c7840f
-system_ext/framework/com.android.hotwordenrollment.common.util.jar|b768584073c6348713ffd0139d44039c9efc775a
+# Hotword enrollment - from marble OS2.0.1.0.VMRMIXM
+product/priv-app/HotwordEnrollmentXGoogleHEXAGON_WIDEBAND/HotwordEnrollmentXGoogleHEXAGON_WIDEBAND.apk|194bbcc27ebad3952294fc3617b2a23db92e767a
+product/priv-app/HotwordEnrollmentYGoogleHEXAGON_WIDEBAND/HotwordEnrollmentYGoogleHEXAGON_WIDEBAND.apk|8eb57dcd535082ed41136383656d0c8b514b2213
+system_ext/etc/permissions/com.android.hotwordenrollment.common.util.xml|01b74943dc0ae9353883298d36fba94128536c9e
+system_ext/framework/com.android.hotwordenrollment.common.util.jar|375acb133095c92d7a411f1c46fae46637f4c5c6
 
 # Identity
 vendor/bin/hw/android.hardware.identity-service-qti
