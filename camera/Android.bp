@@ -1,0 +1,14 @@
+//
+// SPDX-FileCopyrightText: (C) 2024 LibreMobileOS Foundation
+// SPDX-FileCopyrightText: (C) 2025 Paranoid Android
+// SPDX-License-Identifier: Apache-2.0
+//
+
+cc_library_static {
+    name: "libcameraservice_extension.xiaomi_taro",
+    srcs: ["CameraProviderExtension.cpp"],
+    static_libs: ["libbase"],
+    include_dirs: [
+        "frameworks/av/services/camera/libcameraservice/common"
+    ],
+}

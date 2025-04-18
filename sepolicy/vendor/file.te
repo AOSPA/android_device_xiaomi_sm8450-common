@@ -19,5 +19,8 @@ type vendor_sysfs_iio, fs_type, sysfs_type;
 # Thermal
 type thermal_data_file, data_file_type, file_type;
 
+# Torch
+type vendor_sysfs_torch, fs_type, sysfs_type;
+
 # Touch
 type vendor_touchfeature_device, dev_type;
