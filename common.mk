@@ -54,6 +54,7 @@ PRODUCT_VENDOR_PROPERTIES += \
     persist.vendor.audio.misound.disable=true \
     ro.audio.monitorRotation=true \
     ro.audio.spatializer_enabled=true \
+    ro.audio.spatializer_transaural_enabled_default=false \
     ro.config.alarm_vol_steps=15 \
     ro.config.system_vol_steps=15 \
     ro.config.vc_call_vol_default=9 \
