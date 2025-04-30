@@ -388,7 +388,7 @@ PRODUCT_SHIPPING_API_LEVEL := 31
 
 # Thermal
 PRODUCT_PACKAGES += \
-    android.hardware.thermal@2.0-service.qti-v2
+    android.hardware.thermal-service.qti
 
 # Vendor blobs
 $(call inherit-product, vendor/xiaomi/sm8450-common/sm8450-common-vendor.mk)
