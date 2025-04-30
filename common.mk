@@ -453,7 +453,7 @@ PRODUCT_VENDOR_PROPERTIES += \
     persist.vendor.sensors.enable.mag_filter=true
 
 # Shipping API
-PRODUCT_SHIPPING_API_LEVEL ?= 31
+PRODUCT_SHIPPING_API_LEVEL := 31
 
 # Thermal
 PRODUCT_PACKAGES += \
