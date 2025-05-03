@@ -47,4 +47,7 @@
      <string name="action_volume">Show volume panel</string>
      <string name="action_sleep">Turn off screen</string>
 
+     <!-- Common -->
+     <string name="unknown">Unknown</string>
+
 </resources>
