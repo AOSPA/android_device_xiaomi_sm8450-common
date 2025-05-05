@@ -124,7 +124,7 @@ class TouchNonUiService : Service() {
 
     override fun onDestroy() {
         dlog(TAG, "onDestroy")
-        unregisterReceiver(screenStateReceiver)
+        runCatching { unregisterReceiver(screenStateReceiver) }
         if (listening) sensorManager.unregisterListener(sensorListener, nonUiSensor)
         super.onDestroy()
     }
