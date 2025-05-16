@@ -76,10 +76,6 @@ PRODUCT_VENDOR_PROPERTIES += \
     ro.vendor.audio.soundtrigger.xatx.vop.level=0 \
     ro.vendor.audio.support.sound.id=true
 
-PRODUCT_PACKAGES += \
-    libaudioroute.vendor \
-    libtinycompress
-
 # Bluetooth
 PRODUCT_VENDOR_PROPERTIES += \
     persist.sys.fflag.override.settings_bluetooth_hearing_aid=true \
@@ -93,24 +89,8 @@ PRODUCT_VENDOR_PROPERTIES += \
     persist.vendor.service.bdroid.soc.alwayson=true \
     ro.vendor.bluetooth.csip_qti=true
 
-PRODUCT_PACKAGES += \
-    android.hardware.bluetooth@1.0.vendor \
-    com.dsi.ant@1.0.vendor \
-    vendor.qti.hardware.bluetooth_audio@2.1.vendor \
-    vendor.qti.hardware.btconfigstore@1.0.vendor \
-    vendor.qti.hardware.btconfigstore@2.0.vendor
-
 # Camera
 $(call inherit-product-if-exists, vendor/xiaomi/camera/miuicamera.mk)
-
-PRODUCT_PACKAGES += \
-    android.hardware.camera.provider@2.7.vendor \
-    libcamera_metadata.vendor \
-    libexif.vendor \
-    libjpeg.vendor \
-    libyuv.vendor \
-    vendor.qti.hardware.camera.aon@1.0.vendor \
-    vendor.qti.hardware.camera.postproc@1.0.vendor
 
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.camera.flash-autofocus.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.camera.flash-autofocus.xml \
@@ -145,9 +125,6 @@ PRODUCT_PACKAGES += \
 
 # Display / Graphics
 PRODUCT_PACKAGES += \
-    libgui_vendor \
-    vendor.qti.hardware.display.config-V2-ndk_platform.vendor \
-    vendor.qti.hardware.display.config-V5-ndk_platform.vendor \
     vendor.qti.hardware.memtrack-service
 
 PRODUCT_ODM_PROPERTIES += \
@@ -179,9 +156,6 @@ PRODUCT_SYSTEM_EXT_PROPERTIES += \
     ro.sensor.proximity?=true
 
 # DPM
-PRODUCT_PACKAGES += \
-    libhidlbase_shim
-
 PRODUCT_VENDOR_PROPERTIES += \
     persist.vendor.dpm.vndr.feature=1 \
     persist.vendor.dpm.vndr.halservice.enable=1 \
@@ -189,10 +163,7 @@ PRODUCT_VENDOR_PROPERTIES += \
 
 # DRM
 PRODUCT_PACKAGES += \
-    android.hardware.drm@1.4.vendor \
-    android.hardware.drm-service.clearkey \
-    libcrypto_shim.vendor \
-    libdrm.vendor
+    android.hardware.drm-service.clearkey
 
 PRODUCT_VENDOR_PROPERTIES += \
     drm.service.enabled=true
@@ -220,10 +191,6 @@ PRODUCT_SYSTEM_PROPERTIES += \
     persist.sys.fuse.passthrough.enable=true
 
 # GPS
-PRODUCT_PACKAGES += \
-    android.hardware.gnss-V1-ndk_platform.vendor \
-    libcurl.vendor
-
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/gps.conf:$(TARGET_COPY_OUT_VENDOR)/etc/gps.conf
 
@@ -231,13 +198,7 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     android.hardware.health-service.xiaomi \
     android.hardware.health-service.xiaomi_recovery \
-    android.hardware.health@1.0.vendor \
-    android.hardware.health@2.1.vendor \
     vendor.lineage.health-service.default
-
-# Identity
-PRODUCT_PACKAGES += \
-    android.hardware.identity-V3-ndk_platform.vendor
 
 # Incremental FS
 PRODUCT_VENDOR_PROPERTIES += \
@@ -261,15 +222,6 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.consumerir.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.consumerir.xml
 
 # Keymaster
-PRODUCT_PACKAGES += \
-    android.hardware.gatekeeper@1.0.vendor \
-    android.hardware.keymaster@4.1.vendor \
-    android.hardware.security.keymint-V1-ndk_platform.vendor \
-    android.hardware.security.secureclock-V1-ndk_platform.vendor \
-    android.hardware.security.sharedsecret-V1-ndk_platform.vendor \
-    android.hardware.security.rkp-V1-ndk_platform.vendor \
-    libkeymaster_messages.vendor
-
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.keystore.app_attest_key.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.keystore.app_attest_key.xml
 
@@ -308,13 +260,6 @@ PRODUCT_VENDOR_PROPERTIES += \
 endif
 
 # Media
-PRODUCT_PACKAGES += \
-    libavservices_minijail_vendor \
-    libcodec2_hidl@1.2.vendor \
-    libcodec2_hidl_shim \
-    libcodec2_soft_common.vendor \
-    libsfplugin_ccodec_utils.vendor
-
 PRODUCT_VENDOR_PROPERTIES += \
     debug.stagefright.c2inputsurface=-1 \
     ro.mediaserver.64b.enable=true \
@@ -325,9 +270,7 @@ PRODUCT_COPY_FILES += \
 
 # Mlipay
 PRODUCT_PACKAGES += \
-    IFAAService \
-    vendor.xiaomi.hardware.mlipay@1.1.vendor \
-    vendor.xiaomi.hardware.mtdservice@1.0.vendor
+    IFAAService
 
 # NDK
 NEED_AIDL_NDK_PLATFORM_BACKEND := true
@@ -337,9 +280,7 @@ PRODUCT_PACKAGES += \
     NfcNci \
     Tag \
     android.hardware.nfc-service.nxp \
-    android.hardware.nfc@1.2.vendor \
-    com.android.nfc_extras \
-    libchrome.vendor
+    com.android.nfc_extras
 
 ifneq ($(TARGET_NFC_SKU),)
 NFC_PERMISSIONS_DIR := $(TARGET_COPY_OUT_ODM)/etc/permissions/sku_$(TARGET_NFC_SKU)
@@ -418,14 +359,6 @@ PRODUCT_VENDOR_PROPERTIES += \
     ro.vendor.radio.build_profile=v-stable
 
 PRODUCT_PACKAGES += \
-    android.hardware.radio@1.6.vendor \
-    android.hardware.radio.config@1.3.vendor \
-    android.hardware.radio.deprecated@1.0.vendor \
-    android.hardware.secure_element@1.2.vendor \
-    android.system.net.netd@1.1.vendor \
-    android.hardware.wifi.hostapd@1.0.vendor \
-    android.hardware.wifi.supplicant@1.0.vendor \
-    libjson \
     qcrilNrDb_vendor
 
 # Secure element
@@ -435,7 +368,6 @@ PRODUCT_COPY_FILES += \
 # Sensors
 PRODUCT_PACKAGES += \
     android.hardware.sensors-service.multihal \
-    libsensorndkbridge \
     sensor-notifier
 
 PRODUCT_COPY_FILES += \
@@ -456,18 +388,6 @@ PRODUCT_SHIPPING_API_LEVEL := 31
 # Thermal
 PRODUCT_PACKAGES += \
     android.hardware.thermal@2.0-service.qti-v2
-
-# TrustedUI
-PRODUCT_PACKAGES += \
-    android.hidl.memory.block@1.0.vendor \
-    vendor.qti.hardware.systemhelper@1.0.vendor
-
-# VNDK
-PRODUCT_PACKAGES += \
-    libutils-shim
-
-PRODUCT_COPY_FILES += \
-    prebuilts/vndk/v33/arm64/arch-arm64-armv8-a/shared/vndk-core/libstagefright_foundation.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libstagefright_foundation-v33.so
 
 # Vendor blobs
 $(call inherit-product, vendor/xiaomi/sm8450-common/sm8450-common-vendor.mk)
