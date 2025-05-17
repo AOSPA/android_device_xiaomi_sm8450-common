@@ -59,59 +59,43 @@ if [ -z "${SRC}" ]; then
 fi
 
 function blob_fixup() {
+    # Patch all binaries for libstagefright_foundation
+    shopt -s globstar
+    case "${1}" in
+        vendor/bin/** | vendor/**/*.so)
+            readelf -d "$2" 2>/dev/null | grep -q 'libstagefright_foundation.so' && \
+                "${PATCHELF}" --replace-needed "libstagefright_foundation.so" "libstagefright_foundation-v33.so" "${2}"
+            ;;
+    esac
+
     case "${1}" in
         vendor/bin/hw/android.hardware.security.keymint-service-qti | vendor/lib64/libqtikeymint.so)
-            [ "$2" = "" ] && return 0
             "${PATCHELF}" --add-needed "android.hardware.security.rkp-V1-ndk_platform.so" "${2}"
             ;;
-        vendor/bin/hw/dolbycodec2 | vendor/bin/hw/vendor.dolby.hardware.dms@2.0-service | vendor/bin/hw/vendor.dolby.media.c2@1.0-service)
-            [ "$2" = "" ] && return 0
-            "${PATCHELF}" --add-needed "libstagefright_foundation-v33.so" "${2}"
-            ;;
-        vendor/bin/hw/mfp-daemon | vendor/lib64/hw/displayfeature.default.so | vendor/lib64/hw/audio.primary.taro.so)
-            [ "$2" = "" ] && return 0
-            "${PATCHELF}" --replace-needed "libstagefright_foundation.so" "libstagefright_foundation-v33.so" "${2}"
-            ;;
         vendor/bin/hw/vendor.qti.hardware.display.composer-service)
-            [ "$2" = "" ] && return 0
             "${PATCHELF}" --remove-needed "libutils.so" "${2}"
             "${PATCHELF}" --add-needed "libutils-v32.so" "${2}"
             "${PATCHELF}" --add-needed "libutils-shim.so" "${2}"
             ;;
         vendor/etc/camera/*_motiontuning.xml)
-            [ "$2" = "" ] && return 0
             sed -i 's/xml=version/xml\ version/g' "${2}"
             ;;
         vendor/etc/camera/pureView_parameter.xml)
-            [ "$2" = "" ] && return 0
             sed -i "s/=\([0-9]\+\)>/=\"\1\">/g" "${2}"
             ;;
         vendor/etc/media_codecs*.xml)
-            [ "$2" = "" ] && return 0
             sed -Ei "/media_codecs_(google_audio|google_c2|google_telephony|vendor_audio)/d" "${2}"
             ;;
         vendor/lib64/c2.dolby.client.so)
-            [ "$2" = "" ] && return 0
             "${PATCHELF}" --add-needed "libcodec2_hidl_shim.so" "${2}"
             ;;
         vendor/lib64/libwvhidl.so)
-            [ "$2" = "" ] && return 0
             "${PATCHELF}" --add-needed "libcrypto_shim.so" "${2}"
             ;;
         vendor/lib64/vendor.libdpmframework.so)
-            [ "$2" = "" ] && return 0
             "${PATCHELF}" --add-needed "libhidlbase_shim.so" "${2}"
             ;;
-        *)
-            return 1
-            ;;
     esac
-
-    return 0
-}
-
-function blob_fixup_dry() {
-    blob_fixup "$1" ""
 }
 
 if [ -z "${ONLY_TARGET}" ]; then
