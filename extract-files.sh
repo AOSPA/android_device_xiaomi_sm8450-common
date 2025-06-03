@@ -89,9 +89,8 @@ function blob_fixup() {
             ;;
         vendor/etc/media_codecs*.xml)
             sed -Ei "/media_codecs_(google_audio|google_c2|google_telephony|vendor_audio)/d" "${2}"
-            ;;
-        vendor/lib64/c2.dolby.client.so)
-            "${PATCHELF}" --add-needed "libcodec2_hidl_shim.so" "${2}"
+            sed -i "/media_codecs_with_dolby/d" "${2}"
+            sed -i "/<MediaCodec name=\"c2\.dolby\./,/<\/MediaCodec>/d" "${2}"
             ;;
         vendor/lib64/libwvhidl.so)
             "${PATCHELF}" --add-needed "libcrypto_shim.so" "${2}"
