@@ -9,18 +9,18 @@ import android.os.Bundle
 import com.android.settingslib.collapsingtoolbar.CollapsingToolbarBaseActivity
 import com.android.settingslib.collapsingtoolbar.R
 
-/** Double tap side-fingerprint sensor, settings activity. */
-class FpDoubleTapActivity : CollapsingToolbarBaseActivity() {
+/** Device specific gestures, settings activity. */
+class GestureSettingsActivity : CollapsingToolbarBaseActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         fragmentManager
             .beginTransaction()
-            .replace(R.id.content_frame, FpDoubleTapFragment(), TAG)
+            .replace(R.id.content_frame, GestureSettingsFragment(), TAG)
             .commit()
     }
 
     companion object {
-        private const val TAG = "fp_double_tap"
+        private const val TAG = "gesture_settings"
     }
 }

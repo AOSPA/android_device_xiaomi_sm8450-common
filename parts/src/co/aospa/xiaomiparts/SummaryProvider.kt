@@ -21,7 +21,7 @@ class SummaryProvider : ContentProvider() {
         Bundle().apply {
             val summary =
                 when (method) {
-                    KEY_FP_DOUBLE_TAP -> getFpDoubleTapSummary()
+                    KEY_GESTURE_SETTINGS -> getGestureSettingsSummary()
                     else -> throw IllegalArgumentException("Unknown method: $method")
                 }
             putString(META_DATA_PREFERENCE_SUMMARY, summary)
@@ -52,22 +52,22 @@ class SummaryProvider : ContentProvider() {
         selectionArgs: Array<out String>?,
     ): Int = throw UnsupportedOperationException()
 
-    private fun getFpDoubleTapSummary(): String {
+    private fun getGestureSettingsSummary(): String {
         val context = context ?: return ""
-        if (!GestureUtils.isFpDoubleTapEnabled(context)) {
-            return context.getString(R.string.fp_double_tap_summary_off)
-        }
-        val action = GestureUtils.getFpDoubleTapAction(context)
-        val actions = context.resources.getStringArray(R.array.fp_double_tap_action_values)
-        val actionIndex = actions.indexOf(action.toString())
-        val actionName =
-            context.resources
-                .getStringArray(R.array.fp_double_tap_action_entries)
-                .getOrNull(actionIndex) ?: context.getString(R.string.unknown)
-        return context.getString(R.string.fp_double_tap_summary_on, actionName)
+        val backTapSummary = context.getString(R.string.gestures_summary_back_tap)
+        val fpTapSummary = context.getString(R.string.gestures_summary_fp_tap)
+        return buildList {
+                if (GestureUtils.isBackTapAvailable(context)) {
+                    add(backTapSummary)
+                }
+                if (GestureUtils.isFpDoubleTapAvailable(context)) {
+                    add(fpTapSummary)
+                }
+            }
+            .joinToString(", ")
     }
 
     companion object {
-        private const val KEY_FP_DOUBLE_TAP = "fp_double_tap"
+        private const val KEY_GESTURE_SETTINGS = "gesture_settings"
     }
 }

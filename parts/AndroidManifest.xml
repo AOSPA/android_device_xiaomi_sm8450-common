@@ -7,6 +7,8 @@
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
     <uses-permission android:name="android.permission.CAMERA_OPEN_CLOSE_LISTENER" />
 
+    <protected-broadcast android:name="co.aospa.xiaomiparts.ACTION_GESTURE_TRIGGER" />
+
     <application
         android:allowBackup="true"
         android:label="@string/app_name"
@@ -19,6 +21,14 @@
             android:exported="true">
             <intent-filter android:priority="1000">
                 <action android:name="android.intent.action.LOCKED_BOOT_COMPLETED" />
+            </intent-filter>
+        </receiver>
+
+        <receiver
+            android:name=".gestures.GestureActionReceiver"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="co.aospa.xiaomiparts.ACTION_GESTURE_TRIGGER" />
             </intent-filter>
         </receiver>
 
@@ -43,10 +53,9 @@
         </activity>
 
         <activity
-            android:name=".gestures.FpDoubleTapActivity"
-            android:label="@string/fp_double_tap_title"
+            android:name=".gestures.GestureSettingsActivity"
+            android:label="@string/gestures_title"
             android:theme="@style/Theme.SubSettingsBase"
-            android:enabled="@*android:bool/config_is_powerbutton_fps"
             android:exported="true">
             <intent-filter>
                 <action android:name="com.android.settings.action.IA_SETTINGS" />
@@ -54,7 +63,7 @@
             <meta-data android:name="com.android.settings.category"
                        android:value="com.android.settings.category.ia.gestures" />
             <meta-data android:name="com.android.settings.summary_uri"
-                       android:value="content://co.aospa.xiaomiparts.device.summary/fp_double_tap" />
+                       android:value="content://co.aospa.xiaomiparts.device.summary/gesture_settings" />
         </activity>
 
         <provider
@@ -100,6 +109,11 @@
         <service
             android:name=".touch.TouchNonUiService"
             android:permission="TouchNonUiService">
+        </service>
+
+        <service
+            android:name=".gestures.BackTapService"
+            android:permission="BackTapService">
         </service>
 
     </application>

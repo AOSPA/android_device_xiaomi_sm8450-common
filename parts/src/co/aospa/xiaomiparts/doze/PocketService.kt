@@ -24,7 +24,7 @@ import co.aospa.xiaomiparts.utils.dlog
 
 /**
  * This service turns off the screen if accidental touch is detected on lockscreen, based on
- * xiaomi's large-area-touch-sensor reading. This prevents accidental triggering of lockscreen
+ * xiaomi's large-area-touch sensor reading. This prevents accidental triggering of lockscreen
  * controls in pocket.
  */
 class PocketService : Service() {
