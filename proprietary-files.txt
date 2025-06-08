@@ -322,9 +322,6 @@ vendor/lib64/vendor.qti.hardware.ListenSoundModel@1.0-impl.so
 vendor/lib64/vendor.qti.hardware.ListenSoundModel@1.0.so;MODULE_SUFFIX=_vendor
 
 # Media
-vendor/bin/vppservice
-vendor/etc/configstore/vpp.configstore.xml
-vendor/etc/init/vppservice.rc
 vendor/etc/media_cape/video_system_specs.json
 vendor/etc/media_codecs.xml
 vendor/etc/media_codecs_cape.xml
@@ -347,14 +344,6 @@ vendor/etc/media_profiles_taro.xml
 vendor/etc/media_profiles_ukee.xml
 vendor/etc/media_taro/video_system_specs.json
 vendor/etc/media_ukee/video_system_specs.json
-vendor/lib64/libdsd2pcm.so
-vendor/lib64/libmisight.so
-vendor/lib64/libvppclient.so
-vendor/lib64/libvppcommon.so
-vendor/lib64/libvpphcp.so
-vendor/lib64/libvpphvx.so
-vendor/lib64/libvppimmotion.so
-vendor/lib64/libvpplibrary.so
 
 # Media (Dolby Audio) - from nuwa OS1.0.12.0.UMBMIXM
 vendor/bin/hw/vendor.dolby.hardware.dms@2.0-service|a3f593de5fa48113bdc07f9b9b013b333830425d
@@ -378,6 +367,20 @@ vendor/lib64/soundfx/libswspatializer.so|4156088e5c7cd76bfae9b37454d6918ec80d4b8
 vendor/lib64/soundfx/libswvqe.so|1a8acf7b2601275a584bb2302e74b40826f4876f
 vendor/lib64/vendor.dolby.hardware.dms@2.0-impl.so|b2fbec79ed734102ee2ff6a9fd1040cabad535e7
 vendor/lib64/vendor.dolby.hardware.dms@2.0.so|e1aced930abf83580d980d40f9adb7aa3b0f80c4
+
+# Media (VPP)
+vendor/bin/vppservice
+vendor/etc/configstore/vpp.configstore.xml
+vendor/etc/init/vppservice.rc
+vendor/etc/vintf/manifest/vendor.qti.hardware.vpp@2.0-service.xml
+vendor/lib64/libmisight.so
+vendor/lib64/libvppclient.so
+vendor/lib64/libvppcommon.so
+vendor/lib64/libvpphcp.so
+vendor/lib64/libvpphvx.so
+vendor/lib64/libvppimmotion.so
+vendor/lib64/libvpplibrary.so
+vendor/lib64/libvpptestutils.so
 
 # Memory
 vendor/lib64/libvmmem.so
