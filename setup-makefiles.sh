@@ -61,7 +61,8 @@ function lib_to_package_fixup_vendor_variants() {
             vendor.qti.imsrtpservice@3.0 | \
             vendor.qti.ims.* | \
             vendor.qti.latency* | \
-            vendor.xiaomi.hardware.displayfeature@1.0 )
+            vendor.xiaomi.hardware.campostproc@1.0 | \
+            vendor.xiaomi.hardware.displayfeature@1.0)
             echo "$1_vendor"
             ;;
         libgrpc++_unsecure)
