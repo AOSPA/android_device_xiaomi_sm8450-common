@@ -16,6 +16,7 @@ import co.aospa.xiaomiparts.display.DcDimmingService
 import co.aospa.xiaomiparts.doze.PocketService
 import co.aospa.xiaomiparts.gestures.GestureUtils
 import co.aospa.xiaomiparts.thermal.ThermalUtils
+import co.aospa.xiaomiparts.touch.HighTouchPollingService
 import co.aospa.xiaomiparts.touch.TouchNonUiService
 import co.aospa.xiaomiparts.touch.TouchOrientationService
 
@@ -33,6 +34,7 @@ class BootCompletedReceiver : BroadcastReceiver() {
         NfcCameraService.startService(context)
         TouchOrientationService.startService(context)
         TouchNonUiService.startService(context)
+        HighTouchPollingService.startService(context)
         ThermalUtils.getInstance(context).startService()
         GestureUtils.onBootCompleted(context)
     }
