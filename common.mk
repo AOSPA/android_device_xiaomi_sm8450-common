@@ -127,6 +127,7 @@ PRODUCT_PACKAGES += \
     vendor.qti.hardware.memtrack-service
 
 PRODUCT_ODM_PROPERTIES += \
+    debug.sf.enable_hwc_vds=0 \
     persist.sys.sf.color_mode=0 \
     ro.surface_flinger.set_idle_timer_ms?=1100 \
     ro.surface_flinger.set_touch_timer_ms?=200 \
