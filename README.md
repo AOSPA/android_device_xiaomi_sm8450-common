@@ -9,6 +9,7 @@
 ## Currently supported devices:
 
 - Xiaomi 12 (cupid)
+- Xiaomi 12S Pro (unicorn)
 - Redmi K50 Ultra / Xiaomi 12T Pro (diting)
 - POCO F5 / Redmi Note 12 Turbo (marble)
 
