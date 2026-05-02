@@ -118,6 +118,9 @@ function blob_fixup() {
         vendor/lib64/vendor.libdpmframework.so)
             "${PATCHELF}" --add-needed "libhidlbase_shim.so" "${2}"
             ;;
+        vendor/lib64/libgf_hal.so)
+            sed -i 's|\[%s\] openat: %s xiaomi_sysfs_fd,failed:\[fingerdown\]|[%s] openat: xiaomi_sysfs_fd,failed:[fingerdown]   |g' "${2}"
+            ;;
     esac
 }
 
