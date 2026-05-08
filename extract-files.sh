@@ -59,12 +59,14 @@ if [ -z "${SRC}" ]; then
 fi
 
 function blob_fixup() {
-    # Patch all binaries for libstagefright_foundation
+    # Patch all binaries for libstagefright_foundation and libaudioroute
     shopt -s globstar
     case "${1}" in
         vendor/bin/** | vendor/**/*.so)
             readelf -d "$2" 2>/dev/null | grep -q 'libstagefright_foundation.so' && \
                 "${PATCHELF}" --replace-needed "libstagefright_foundation.so" "libstagefright_foundation-v33.so" "${2}"
+            readelf -d "$2" 2>/dev/null | grep -q 'libaudioroute.so' && \
+                "${PATCHELF}" --replace-needed "libaudioroute.so" "libaudioroute-v34.so" "${2}"
             ;;
     esac
 
