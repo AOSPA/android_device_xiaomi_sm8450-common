@@ -69,13 +69,25 @@ function blob_fixup() {
     esac
 
     case "${1}" in
-        vendor/bin/hw/android.hardware.security.keymint-service-qti | vendor/lib64/libqtikeymint.so)
-            "${PATCHELF}" --add-needed "android.hardware.security.rkp-V1-ndk_platform.so" "${2}"
+        vendor/bin/hw/android.hardware.identity-service-qti|vendor/lib64/libqtiidentitycredential.so)
+            [ "$2" = "" ] && return 0
+            "${PATCHELF}" --replace-needed "android.hardware.identity-V3-ndk_platform.so" "android.hardware.identity-V3-ndk.so" "${2}"
+            "${PATCHELF}" --replace-needed "android.hardware.keymaster-V3-ndk_platform.so" "android.hardware.keymaster-V3-ndk.so" "${2}"
+            ;;
+        vendor/bin/hw/android.hardware.security.keymint-service-qti|vendor/lib64/libqtikeymint.so)
+            [ "$2" = "" ] && return 0
+            "${PATCHELF}" --replace-needed "android.hardware.security.keymint-V1-ndk_platform.so" "android.hardware.security.keymint-V1-ndk.so" "${2}"
+            "${PATCHELF}" --replace-needed "android.hardware.security.secureclock-V1-ndk_platform.so" "android.hardware.security.secureclock-V1-ndk.so" "${2}"
+            "${PATCHELF}" --replace-needed "android.hardware.security.sharedsecret-V1-ndk_platform.so" "android.hardware.security.sharedsecret-V1-ndk.so" "${2}"
+            grep -q "android.hardware.security.rkp-V1-ndk.so" "${2}" || ${PATCHELF} --add-needed "android.hardware.security.rkp-V1-ndk.so" "${2}"
             ;;
         vendor/bin/hw/vendor.qti.hardware.display.composer-service)
+            [ "$2" = "" ] && return 0
             "${PATCHELF}" --remove-needed "libutils.so" "${2}"
             "${PATCHELF}" --add-needed "libutils-v32.so" "${2}"
             "${PATCHELF}" --add-needed "libutils-shim.so" "${2}"
+            "${PATCHELF}" --replace-needed "android.hardware.common-V2-ndk_platform.so" "android.hardware.common-V2-ndk.so" "${2}"
+            "${PATCHELF}" --replace-needed "vendor.qti.hardware.display.config-V5-ndk_platform.so" "vendor.qti.hardware.display.config-V5-ndk.so" "${2}"
             ;;
         vendor/etc/camera/*_motiontuning.xml)
             sed -i 's/xml=version/xml\ version/g' "${2}"
@@ -91,6 +103,14 @@ function blob_fixup() {
             sed -Ei "/media_codecs_(google_audio|google_c2|google_telephony|vendor_audio)/d" "${2}"
             sed -i "/media_codecs_with_dolby/d" "${2}"
             sed -i "/<MediaCodec name=\"c2\.dolby\./,/<\/MediaCodec>/d" "${2}"
+            ;;
+        vendor/lib64/libcamximageformatutils.so)
+            [ "$2" = "" ] && return 0
+            "${PATCHELF}" --replace-needed "vendor.qti.hardware.display.config-V2-ndk_platform.so" "vendor.qti.hardware.display.config-V2-ndk.so" "${2}"
+            ;;
+        vendor/lib64/libgarden.so|vendor/lib64/libgarden_haltests_e2e.so)
+            [ "$2" = "" ] && return 0
+            "${PATCHELF}" --replace-needed "android.hardware.gnss-V1-ndk_platform.so" "android.hardware.gnss-V1-ndk.so" "${2}"
             ;;
         vendor/lib64/libwvhidl.so)
             "${PATCHELF}" --add-needed "libcrypto_shim.so" "${2}"
