@@ -275,7 +275,8 @@ PRODUCT_PACKAGES += \
     NfcNci \
     Tag \
     android.hardware.nfc-service.nxp \
-    com.android.nfc_extras
+    com.android.nfc_extras \
+    libnfc_vendor_extn_sys
 
 ifneq ($(TARGET_NFC_SKU),)
 NFC_PERMISSIONS_DIR := $(TARGET_COPY_OUT_ODM)/etc/permissions/sku_$(TARGET_NFC_SKU)
