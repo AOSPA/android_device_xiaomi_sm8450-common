@@ -52,9 +52,6 @@ $(foreach sku, $(call to-upper, $(TARGET_NFC_SKU)), \
     $(eval ODM_MANIFEST_$(sku)_FILES := $(COMMON_PATH)/configs/hidl/manifest_nfc.xml))
 endif
 
-# Health
-TARGET_HEALTH_CHARGING_CONTROL_SUPPORTS_BYPASS := false
-
 # Kernel
 BOARD_KERNEL_PAGESIZE := 4096
 BOARD_INCLUDE_DTB_IN_BOOTIMG := true
