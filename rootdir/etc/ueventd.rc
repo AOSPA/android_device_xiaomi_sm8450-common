@@ -52,3 +52,15 @@ subsystem mi_display
 
 # Battery
 /sys/class/qcom-battery                        input_suspend    0660  system system
+
+# Batterysecret / PMIC nodes
+/sys/class/qcom-battery                        authentic        0660  system system
+/sys/class/qcom-battery                        verify_digest    0660  system system
+/sys/class/qcom-battery                        verify_process   0660  system system
+/sys/class/qcom-battery                        pd_verifed       0660  system system
+/sys/class/qcom-battery                        verify_slave_flag 0660  system system
+/sys/class/qcom-battery                        slave_authentic  0660  system system
+/sys/class/qcom-battery                        request_vdm_cmd  0660  system system
+/sys/class/qcom-battery                        is_old_hw        0660  system system
+/sys/class/qcom-battery                        real_type        0660  system system
+

@@ -125,8 +125,8 @@ service init-xiaomi-taro-sh /vendor/bin/init.xiaomi_taro.sh
 
 service batterysecret /vendor/bin/batterysecret
     class last_start
-    user root
-    group system system wakelock
+    user system
+    group system usb wakelock
     disabled
     override
 
